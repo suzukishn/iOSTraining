@@ -23,12 +23,13 @@ class ViewController: UIViewController {
          * 以下のようにNSLayoutConstraintをViewに追加する必要がある。
          */
         sampleVC.view.translatesAutoresizingMaskIntoConstraints = false
+        guard let sampleVcView = sampleVC.view else { return }
         let constraints: [NSLayoutConstraint] = [.top, .left, .right, .bottom].map {
-            NSLayoutConstraint(item: sampleVC.view, attribute: $0, relatedBy: .equal, toItem: view, attribute: $0, multiplier: 1, constant: 0)
+            NSLayoutConstraint(item: sampleVcView, attribute: $0, relatedBy: .equal, toItem: view, attribute: $0, multiplier: 1, constant: 0)
         }
         view.addConstraints(constraints)
-        addChildViewController(sampleVC)
-        sampleVC.didMove(toParentViewController: self)
+        addChild(sampleVC)
+        sampleVC.didMove(toParent: self)
     }
 
     override func didReceiveMemoryWarning() {
