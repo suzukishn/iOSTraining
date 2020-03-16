@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
     
@@ -20,27 +20,27 @@ class ViewController: UIViewController {
         // TODO: 右ボタンを作成
         
         NotificationCenter.default.addObserver(self,
-                                     selector: #selector(ViewController.keyboardWillShow(_:)),
-                                         name: NSNotification.Name.UIKeyboardWillShow,
-                                       object: nil)
+                                               selector: #selector(ViewController.keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
         
         // TODO: キーボードが隠れる際の通知を登録
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     //MARK: - KeyboardNotification
-    func keyboardWillShow(_ notification: Notification) {
-        print(notification.userInfo)
+    @objc func keyboardWillShow(_ notification: Notification) {
+        print(notification.userInfo ?? "")
         
         // TODO: textViewのbottomのconstraintをキーボードの高さに再設定する（userInfoのUIKeyboardFrameEndUserInfoKeyの値を参照する）
     }
     
     func keyboardWillHide(_ notification: Notification) {
-        print(notification.userInfo)
+        print(notification.userInfo ?? "")
         
         // TODO: textViewのbottomのconstraintを0に再設定する
     }
