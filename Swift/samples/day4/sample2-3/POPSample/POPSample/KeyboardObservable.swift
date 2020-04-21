@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol KeyboardObservable: class {
     var keyboardObservers: [Any] { get set }
@@ -21,10 +22,10 @@ protocol KeyboardObservable: class {
 extension KeyboardObservable {
     func addKeyboardObservers() {
         keyboardObservers = [
-            (.UIKeyboardWillShow, keyboardWillShow(_:)),
-            (.UIKeyboardDidShow, keyboardDidShow(_:)),
-            (.UIKeyboardWillHide, keyboardWillHide(_:)),
-            (.UIKeyboardDidHide, keyboardDidHide(_:))
+            (UIResponder.keyboardWillShowNotification, keyboardWillShow(_:)),
+            (UIResponder.keyboardDidShowNotification, keyboardDidShow(_:)),
+            (UIResponder.keyboardWillHideNotification, keyboardWillHide(_:)),
+            (UIResponder.keyboardDidHideNotification, keyboardDidHide(_:))
             ].map { NotificationCenter.default.addObserver(forName: $0, object: nil, queue: .main, using: $1) }
     }
     
