@@ -81,22 +81,24 @@ class ViewController: UIViewController {
     }
     
     // TODO: toolbarのボタンが押された時の処理
-    func backButtonTapped(_ sender: UIBarButtonItem) {
+    @objc func backButtonTapped(_ sender: UIBarButtonItem) {
         webView.goBack()
     }
     
-    func forwardButtonTapped(_ sender: UIBarButtonItem) {
+    @objc func forwardButtonTapped(_ sender: UIBarButtonItem) {
         webView.goForward()
     }
     
-    func reloadButtonTapped(_ sender: UIBarButtonItem) {
+    @objc func reloadButtonTapped(_ sender: UIBarButtonItem) {
         webView.reload()
     }
 }
 
 extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        print(navigationAction.request.url)
+        if let url = navigationAction.request.url {
+            print(url)
+        }
         decisionHandler(.allow)
     }
     

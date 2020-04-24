@@ -23,8 +23,8 @@ class ViewController: UIViewController {
         textField.delegate = self
         textView.delegate = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.didChangeTextFieldText(_:)), name: NSNotification.Name.UITextFieldTextDidChange, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.didChangeTextViewText(_:)), name: NSNotification.Name.UITextViewTextDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.didChangeTextFieldText(_:)), name: UITextField.textDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.didChangeTextViewText(_:)), name: UITextView.textDidChangeNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,12 +32,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func didChangeTextFieldText(_ notification: Notification) {
-        textFieldCountLabel.text = "\(textField.text?.characters.count ?? 0)"
+    @objc func didChangeTextFieldText(_ notification: Notification) {
+        textFieldCountLabel.text = "\(textField.text?.count ?? 0)"
     }
     
-    func didChangeTextViewText(_ notification: Notification) {
-        textFieldCountLabel.text = "\(textView.text?.characters.count ?? 0)"
+    @objc func didChangeTextViewText(_ notification: Notification) {
+        textFieldCountLabel.text = "\(textView.text?.count ?? 0)"
     }
 }
 
