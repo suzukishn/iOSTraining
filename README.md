@@ -120,7 +120,7 @@ SwiftでのiOSアプリ開発の基礎知識と実務スキルを身に付ける
 ##### ②UIKit 4 - image and text -
 
 1. ~~画像1~~  // この項目は飛ばしてください。
-  - ~~課題 [2.1 UIImagePickerController](./Swift/pages/day3/2-1_UIImagePickerController.md)  ~~
+  - ~~課題 [2.1 UIImagePickerController](./Swift/pages/day3/2-1_UIImagePickerController.md)~~
   - ~~プロジェクト [day3/2.1](./Swift/before/day3/2.1)~~
 
 2. ~~画像2~~  // この項目は飛ばしてください。
@@ -181,7 +181,7 @@ SwiftでのiOSアプリ開発の基礎知識と実務スキルを身に付ける
 3. ~~Carthage~~  // この項目は飛ばしてください。
   - ~~課題 [1.3 Carthage](./Swift/pages/day4/1-3_Carthage.md)~~
   - ~~参考 [Swiftで使えるライブラリ管理ツールCarthageの使い方](http://kotalab.com/carthage-install)~~
-  - ~~参考 [Swift Package Manager を試してみました](http://dev.classmethod.jp/etc/swift-package-manager-1/)~~ 
+  - ~~参考 [Swift Package Manager を試してみました](http://dev.classmethod.jp/etc/swift-package-manager-1/)~~
 
 ##### ②設計とデザインパターン
 
