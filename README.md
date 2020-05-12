@@ -151,7 +151,8 @@ SwiftでのiOSアプリ開発の基礎知識と実務スキルを身に付ける
 ##### ④ネットワーク処理
 
 1. JSON  
-  - 課題 [4.1 JSONのシリアライズとデシリアライズ](./Swift/pages/day3/4-1_JSON.md)  
+  - 課題 [4.1.1 JSONのシリアライズとデシリアライズ](./Swift/pages/day3/4-1_JSON.md)
+  - 課題 [4.1.2 Codable](./Swift/pages/day3/4-1-2_Codable.md)
 
 2. 通信  
   - 課題 [4.2 HTTPリクエストの基礎](./Swift/pages/day3/4-2_HTTP-request-basic.md)  
